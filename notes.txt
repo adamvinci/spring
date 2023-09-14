@@ -1,0 +1,9 @@
+  @DeleteMapping("/produits")
+    private void deleteAll() {
+        produits.clear();
+    }
+@GetMapping("/produits")
+    private Iterable<Produit> getAll() {
+        return produits;
+    }
+renvoie 200 automatiquement car c'est un type java
