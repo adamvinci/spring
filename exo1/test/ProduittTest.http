@@ -1,0 +1,42 @@
+
+
+
+### Get All Objects
+GET {{baseUrl}}/produits
+
+### Get one Object with existing id
+GET {{baseUrl}}/produits/1
+
+### Get one Object with no-existing id
+GET {{baseUrl}}/produits/-5
+
+### create an already existing object
+POST {{baseUrl}}/produits
+Content-Type: application/json
+
+{
+  "id": "1",
+  "name": "name",
+  "categorie": "categorie",
+  "price" : "2.00"
+}
+
+### create a new object
+POST {{baseUrl}}/produits
+Content-Type: application/json
+
+{
+  "id": "6",
+  "name": "name",
+  "categorie": "categorie",
+  "price" : "2.00"
+}
+
+### delete one object
+DELETE {{baseUrl}}/produits/1
+
+### delete  object doenst exist
+DELETE {{baseUrl}}/produits/10
+
+### delete all objects
+DELETE {{baseUrl}}/produits
