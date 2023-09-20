@@ -1,0 +1,116 @@
+openapi: 3.0.3
+info:
+  title: Amazon Product Service
+  description: Amazon Product Service
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:8080'
+paths:
+  /produits:
+
+    post:
+      summary: Create a product
+      requestBody:
+        description: Product to add
+        content:
+          'application/json':
+            schema:
+              $ref: '#/components/schemas/produits'
+      responses:
+        409:
+          description: Product already exists
+        201:
+          description: Product created
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/produits'
+
+    get:
+      summary: Get All product
+      responses:
+        200:
+          description: Returned list of products
+          content:
+            'application/json':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/produits'
+
+    delete:
+      summary: Delete all products
+      responses:
+        200:
+          description: All products are deleted
+
+  /produits/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: Id of the video
+        required: true
+        schema:
+          type: integer
+          example: 1
+        style: simple
+
+    get:
+      summary: Read a product
+      responses:
+        404:
+          description: Product not found
+        200:
+          description: Returned product
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/produits'
+
+    put:
+      summary: Product a video
+      requestBody:
+        description: New values of the product
+        content:
+          'application/json':
+            schema:
+              $ref: '#/components/schemas/produits'
+      responses:
+        400:
+          description: Non matching video ids
+        404:
+          description: Product not found
+        200:
+          description: Updated product, returned old values
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/produits'
+
+    delete:
+      summary: Delete a product
+      responses:
+        404:
+          description: Product not found
+        200:
+          description: Deleted product
+
+components:
+  schemas:
+    produits:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        categorie:
+          type: string
+        price:
+          type: number
+      example:
+        id: 1
+        name: produit1
+        categorie: categorie1
+        price: 212
+
