@@ -18,7 +18,8 @@ error (Action:Consider defining a bean of type 'com.netflix.discovery.AbstractDi
 -Quand on apelle un microservice d'un autre microservice ou doit creer un pojo dans models et une interface
  proxy (avec feignclient,repository) qui va appeler le service lance via l'url du GetMapping
 
-@Transactional (repository) = transaction
+@Transactional (repository) = transaction (pour les delete)
 @feignClient(name="nom du service qu'on veux reach defini dans application.propreties)
+dans le repositoryclass spring cree les methodes en fonction des noms par ex boolean findByPrice(double price) deleteBy(pseudo)
 
 demander transaction/ quand le produit/user proxy renvoie un code erreur ca n'affiche rien
