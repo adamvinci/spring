@@ -1,0 +1,62 @@
+### Create user
+POST http://localhost:9002/users/CutieCat
+Content-Type: application/json
+
+{
+  "pseudo": "CutieCat",
+  "firstname": "Catherine",
+  "lastname": "Mireault"
+}
+
+### Read user
+GET http://localhost:9002/users/PetWard
+
+### Update user
+PUT http://localhost:9002/users/PetWard
+Content-Type: application/json
+
+{
+  "pseudo": "PetWard",
+  "firstname": "Pet",
+  "lastname": "Ward"
+}
+
+### Delete user
+DELETE http://localhost:9002/users/pettier
+
+
+### GET ALL WISHES
+GET http://localhost:9004/wishlist
+### Create Wish with existing user and product
+PUT http://localhost:9004/wishlist/Cat4Life/2
+### Create Wish with non-existing product
+PUT http://localhost:9004/wishlist/PetWard/100
+### Create Wish with non-existing user
+PUT http://localhost:9004/wishlist/Petard/1
+
+### GET wish of users
+GET http://localhost:9004/wishlist/user/PetWard
+### DELETE productid of user
+DELETE http://localhost:9004/wishlist/PetWard/2
+### DELETE ALL WISH of user
+DELETE http://localhost:9004/wishlist/PetWard
+### DELETE ALL PRODUCT
+DELETE http://localhost:9004/wishlist/allWishes/2
+
+### GET ONE PRODUCT
+GET http://localhost:9003/produits/1
+
+### CREATE ONE PRODUCT
+POST http://localhost:9003/produits
+Content-Type: application/json
+
+{
+  "id": 2,
+  "name": "nom",
+  "categorie": "categorie",
+  "price": 2.0
+
+}
+
+### get user
+GET http://localhost:9002/users/PetWard

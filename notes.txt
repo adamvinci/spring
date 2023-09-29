@@ -7,3 +7,18 @@
         return produits;
     }
 renvoie 200 automatiquement car c'est un type java
+
+1=>lombok,spring web
+bd=>spring data jpa,h2database
+microservice=>eureka(annuaire microservice) dans le main eureka discovery client(pour detecter microservice),openfeign(facilite communication
+pas d'url absolue entre microservice)
+donc y'a un service eureka(enableeurekaserrver) et dans chaque module y'a un client eureka(@EnableDiscoveryClient @EnableFeignClients)
+pour chaque microservice=>application.propreties
+error (Action:Consider defining a bean of type 'com.netflix.discovery.AbstractDiscoveryClientOptionalArgs' in your configuration.)=>copier pom.xml
+-Quand on apelle un microservice d'un autre microservice ou doit creer un pojo dans models et une interface
+ proxy (avec feignclient,repository) qui va appeler le service lance via l'url du GetMapping
+
+@Transactional (repository) = transaction
+@feignClient(name="nom du service qu'on veux reach defini dans application.propreties)
+
+demander transaction/ quand le produit/user proxy renvoie un code erreur ca n'affiche rien
