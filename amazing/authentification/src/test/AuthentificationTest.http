@@ -1,0 +1,38 @@
+###
+POST http://localhost:9006/authentification/create/zizi
+Content-Type: application/json
+
+{
+  "pseudo": "zizi",
+  "password": "Catherine"
+
+}
+
+###
+PUT http://localhost:9006/authentification/update/zizi
+Content-Type: application/json
+
+{
+  "pseudo": "zizi",
+  "password": "Catherin"
+}
+
+###
+POST http://localhost:9006/authentification/connect
+Content-Type: application/json
+
+{
+  "pseudo": "zizi",
+  "password": "Catherin"
+}
+###
+GET http://localhost:9006/authentification/all
+###
+DELETE http://localhost:9006/authentification/delete/zizi
+###
+POST http://localhost:9006/authentification/verify
+Content-Type: application/json
+
+{
+"token" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJhdXRoMCIsInBzZXVkbyI6InppemkifQ.b1hL5YBQNpgIxni2qNdeJiTTdQ4kh9sekkMiO1yYlFMda68BFun2DVOm8MjX8vHxyd_Z9L8dIwKULCoMMiD4yg"
+}
