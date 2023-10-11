@@ -1,3 +1,4 @@
+403 forbidden=> connecte mais ps les droits, 401=>unhautorized co
   @DeleteMapping("/produits")
     private void deleteAll() {
         produits.clear();
@@ -23,3 +24,7 @@ error (Action:Consider defining a bean of type 'com.netflix.discovery.AbstractDi
 dans le repositoryclass spring cree les methodes en fonction des noms par ex boolean findByPrice(double price) deleteBy(pseudo)
 
 demander transaction/ quand le produit/user proxy renvoie un code erreur ca n'affiche rien
+
+seance4 : authentification
+microservicenormal + AthentificationPropreties+dependeciesbcrpyjwt + secret dans run editconfig rajouter:-Dbe.vinci.ipl.catflix.authentification.secret=<secret> dans advm = @ConfigurationPropreties dans ApplicationPropreties
+ @RequestHeader("Authorization") String token
