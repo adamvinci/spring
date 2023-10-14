@@ -12,6 +12,7 @@
         <module name="wishlist" />
         <module name="authentification" />
         <module name="videos" />
+        <module name="gateaway" />
         <module name="users" />
         <module name="products" />
       </profile>
@@ -29,6 +30,7 @@
       <module name="auth" options="-parameters" />
       <module name="authentification" options="-parameters" />
       <module name="eureka" options="-parameters" />
+      <module name="gateaway" options="-parameters" />
       <module name="products" options="-parameters" />
       <module name="reviews" options="-parameters" />
       <module name="users" options="-parameters" />
